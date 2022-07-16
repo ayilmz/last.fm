@@ -1,12 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 
-import {Header} from "./stories/Header"
+import {Header} from "./components/Header"
+import {ArtistList} from "./components/ArtisList"
 
 function App() {
   return (
     <div className="App">
-      <Header />
+        <Header />
+        <ArtistList />
     </div>
   );
 }

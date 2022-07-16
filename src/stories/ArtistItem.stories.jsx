@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArtistItem } from './ArtistItem';
+import { ArtistItem } from '../components/ArtistItem';
 
 export default {
     title: 'last.fm/ArtistItem',

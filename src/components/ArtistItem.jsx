@@ -5,9 +5,11 @@ export const ArtistItem = ({image, name, playCount, listeners}) => {
     return (
         <div>
             <img src={image} alt={name} width="64" height="64"/>
-            <p>{name}</p>
-            <p>{playCount}</p>
-            <p>{listeners}</p>
+            <div>
+                <p>{name}</p>
+                <p>{playCount}</p>
+                <p>{listeners}</p>
+            </div>
         </div>
     );
 };
