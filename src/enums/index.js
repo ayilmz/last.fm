@@ -7,5 +7,6 @@ export const lastfmStatic  = {
             ARTIST_GET_TOP_TRACKS: "method=artist.gettoptracks"
         },
     },
-    LOADING: "loading ..."
+    LOADING: "loading ...",
+    NOT_FOUND_IMAGE: "https://comnplayscience.eu/app/images/notfound.png",
 }

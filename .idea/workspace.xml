@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff3d241c-57e1-47fe-a1c3-ac54f1876ba7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/ArtistDetailCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stories/ArtistDetailCard.stories.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ArtisList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArtisList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ArtistDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArtistDetail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ArtistItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArtistPreview.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArtistDetailCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArtistDetailCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArtistPreview.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArtistPreview.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/enums/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/ArtistItem.stories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/ArtistIPreview.stories.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +55,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657834629237</updated>
-      <workItem from="1657834631425" duration="21839000" />
+      <workItem from="1657834631425" duration="22649000" />
     </task>
     <servers />
   </component>

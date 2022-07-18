@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { lastfmStatic} from "../enums";
 
 export const ArtistPreview = ({image, name, playCount, listeners}) => {
     return (
         <div style={{paddingBottom: "1rem"}}>
-            <img src={image} alt={name} width="64" height="64"/>
+            <LazyLoadImage src={image} alt={name} width="64" height="64"/>
             <div>
                 <p>{name}</p>
                 <p>{playCount}</p>
@@ -22,5 +24,5 @@ ArtistPreview.propTypes = {
 };
 
 ArtistPreview.defaultProps = {
-    image: "https://comnplayscience.eu/app/images/notfound.png"
+    image: lastfmStatic.NOT_FOUND_IMAGE
 }
