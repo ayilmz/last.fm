@@ -1,24 +1,23 @@
 import { useEffect, useState }from "react";
 import axios from "axios";
-import PropTypes from 'prop-types';
 import {lastfmStatic} from "../enums";
-import {ArtistItem} from "./ArtistItem";
-import { Link, Routes, Route } from "react-router-dom";
+import {ArtistPreview} from "./ArtistPreview";
+import { Link, Routes, Route, useLocation } from "react-router-dom";
 import {ArtistDetail} from "./ArtistDetail";
 
 export const ArtistList = () => {
-
+    let location = useLocation();
     const [artistList, setArtistList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [showLinks, setShowLinks] = useState(true);
+    const [showLinks, setShowLinks] = useState(location.pathname === "/");
 
 
     useEffect(() => {
-        axios(lastfmStatic.URLS.TOP_ARTISTS)
+        axios(`${lastfmStatic.API_URL.URL}${lastfmStatic.API_URL.METHOD.GET_TOP_ARTISTS}`)
             .then((artistList) => setArtistList(artistList.data.artists.artist))
             .catch((e) => console.log(e))
             .finally(()=> { setIsLoading(false)})
-    },[])
+    },[]);
     return (
         isLoading ?
             (<div>{lastfmStatic.LOADING}</div>)
@@ -26,8 +25,8 @@ export const ArtistList = () => {
             (<div>
                 {showLinks ?
                     artistList?.map((artist, index) => (
-                    <Link to={`/artistDetail/${artist.playcount}`} onClick={() => setShowLinks(false)} key={index}>
-                        <ArtistItem  playCount={artist.playcount} name={artist.name} listeners={artist.listeners} image={artist.image[1]["#text"]} />
+                    <Link to={`/artistDetail/${artist.name}`} onClick={() => setShowLinks(false)} key={index}>
+                        <ArtistPreview playCount={artist.playcount} name={artist.name} listeners={artist.listeners} image={artist.image[1]["#text"]} />
                     </Link>
                 ))
                 :
@@ -35,18 +34,10 @@ export const ArtistList = () => {
                 }
 
                 <Routes>
-                    <Route path="*" element={<ArtistList />}/>
-
                     <Route path="artistDetail">
-                        <Route path=":playcount" element={<ArtistDetail />} />
+                        <Route path=":name" element={<ArtistDetail />} />
                     </Route>
                 </Routes>
             </div>)
     );
 };
-
-ArtistList.propTypes = {
-};
-
-ArtistList.defaultProps = {
-}

@@ -1,12 +1,12 @@
 import React from 'react';
-import { ArtistItem } from '../components/ArtistItem';
+import { ArtistPreview } from '../components/ArtistPreview';
 
 export default {
-    title: 'last.fm/ArtistItem',
-    component: ArtistItem,
+    title: 'last.fm/ArtistPreview',
+    component: ArtistPreview,
 };
 
-const Template = (args) => <ArtistItem {...args} />;
+const Template = (args) => <ArtistPreview {...args} />;
 
 export const Primary = Template.bind({})
 
