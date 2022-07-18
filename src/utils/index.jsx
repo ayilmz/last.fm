@@ -1,0 +1,1 @@
+export { imageControl } from './imageControl';
