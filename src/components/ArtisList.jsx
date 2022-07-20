@@ -4,6 +4,7 @@ import {lastfmStatic} from "../enums";
 import {ArtistPreview} from "./ArtistPreview";
 import { Link, Routes, Route, useLocation } from "react-router-dom";
 import {ArtistDetail} from "./ArtistDetail";
+import { Button } from 'react-bootstrap';
 
 export const ArtistList = () => {
     let location = useLocation();
