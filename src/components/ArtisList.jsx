@@ -25,7 +25,7 @@ export const ArtistList = () => {
             :
             (
                 <>
-                    {showLinks === false && (
+                    {!showLinks && (
                         <Link to="/" onClick={() => setShowLinks(true)}>HomePage</Link>
                     )}
 
