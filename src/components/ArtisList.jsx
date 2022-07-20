@@ -5,6 +5,7 @@ import {ArtistPreview} from "./ArtistPreview";
 import { Link, Routes, Route, useLocation } from "react-router-dom";
 import {ArtistDetail} from "./ArtistDetail";
 import { Button } from 'react-bootstrap';
+import { StyledContainer, LinkStyled }from './ArtistListStyle'
 
 export const ArtistList = () => {
     let location = useLocation();
@@ -23,22 +24,29 @@ export const ArtistList = () => {
         isLoading ?
             (<div>{lastfmStatic.LOADING}</div>)
             :
-            (<div>
-                {showLinks ?
-                    artistList?.map((artist, index) => (
-                    <Link to={`/artistDetail/${artist.name}`} onClick={() => setShowLinks(false)} key={index}>
-                        <ArtistPreview playCount={artist.playcount} name={artist.name} listeners={artist.listeners} image={artist.image[1]["#text"]} />
-                    </Link>
-                ))
-                :
-                    <Link to="/" onClick={() => setShowLinks(true)}>HomePage</Link>
-                }
+            (
+                <>
+                    {showLinks === false && (
+                        <Link to="/" onClick={() => setShowLinks(true)}>HomePage</Link>
+                    )}
 
-                <Routes>
-                    <Route path="artistDetail">
-                        <Route path=":name" element={<ArtistDetail />} />
-                    </Route>
-                </Routes>
-            </div>)
+                    <StyledContainer>
+                        {showLinks && (
+                            artistList?.map((artist, index) => (
+                                <LinkStyled to={`/artistDetail/${artist.name}`} onClick={() => setShowLinks(false)} key={index}>
+                                    <ArtistPreview playCount={artist.playcount} name={artist.name} listeners={artist.listeners} image={artist.image[1]["#text"]} />
+                                </LinkStyled>
+                            ))
+                        )}
+
+                        <Routes>
+                            <Route path="artistDetail">
+                                <Route path=":name" element={<ArtistDetail />} />
+                            </Route>
+                        </Routes>
+                    </StyledContainer>
+                </>
+
+                )
     );
 };

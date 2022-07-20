@@ -3,24 +3,31 @@ import PropTypes from 'prop-types';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { lastfmStatic} from "../enums";
 import { Container, Row, Col } from 'react-bootstrap';
+import {StyledContainer, Title, Name, Listeners, PlayCount} from './ArtistPreviewStyle'
 
 export const ArtistPreview = ({image, name, playCount, listeners}) => {
     return (
-        <Container style={{paddingBottom: "1rem"}}>
-            <Row className="justify-content-md-center">
-                <Col xs={1}>
-                    <LazyLoadImage src={image} alt={name} width="64" height="64"/>
-                </Col>
-                <Col xs={2}>
-                    <p>Artist</p>
-                    <p>{name}</p>
-                </Col>
-                <Col xs={2}>
-                    <p>listeners: {playCount}</p>
-                    <p>playcount: {listeners}</p>
-                </Col>
-            </Row>
-        </Container>
+        <StyledContainer>
+            <Container>
+                <Row className="justify-content-center align-items-center">
+                    <Col xs={2}>
+                        <LazyLoadImage src={image} alt={name} width="64" height="64"/>
+                    </Col>
+                    <Col xs={6}>
+                        <Title>Artist</Title>
+                        <Name>{name}</Name>
+                    </Col>
+                    <Col xs={4}>
+                        <Listeners>
+                            listeners: {playCount}
+                        </Listeners>
+                        <PlayCount>
+                            playcount: {listeners}
+                        </PlayCount>
+                    </Col>
+                </Row>
+            </Container>
+        </StyledContainer>
     );
 };
 
