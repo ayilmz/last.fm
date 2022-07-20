@@ -8,21 +8,21 @@ import {StyledContainer, Title, Name, Listeners, PlayCount} from './ArtistPrevie
 export const ArtistPreview = ({image, name, playCount, listeners}) => {
     return (
         <StyledContainer>
-            <Container>
+            <Container className="p-0">
                 <Row className="justify-content-center align-items-center">
-                    <Col xs={2}>
+                    <Col xs={3}>
                         <LazyLoadImage src={image} alt={name} width="64" height="64"/>
                     </Col>
-                    <Col xs={6}>
+                    <Col xs={4}>
                         <Title>Artist</Title>
                         <Name>{name}</Name>
                     </Col>
-                    <Col xs={4}>
+                    <Col xs={5}>
                         <Listeners>
-                            listeners: {playCount}
+                            {lastfmStatic.LISTENERS}: {playCount}
                         </Listeners>
                         <PlayCount>
-                            playcount: {listeners}
+                            {lastfmStatic.PLAYCOUNT}: {listeners}
                         </PlayCount>
                     </Col>
                 </Row>

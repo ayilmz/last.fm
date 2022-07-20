@@ -9,4 +9,8 @@ export const lastfmStatic  = {
     },
     LOADING: "loading ...",
     NOT_FOUND_IMAGE: "https://comnplayscience.eu/app/images/notfound.png",
+    TOP_ALBUMS: "Top Albums",
+    TOP_TRACKS: "Top Tracks",
+    LISTENERS: "listeners",
+    PLAYCOUNT: "playcount"
 }
